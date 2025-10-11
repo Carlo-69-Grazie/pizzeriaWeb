@@ -3,79 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pizzeria Bella Napoli - Menu</title>
+  <title>Pizzeria Bella Napoli</title>
   <style>
     body {
-      background-image: url("img/sfondo.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: black;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      font-family: 'Georgia', serif;
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
+      background: url("img/sfondo.jpg") no-repeat center fixed;
+      background-size: cover;
     }
 
     header {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      padding: 20px;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.4);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      box-sizing: border-box;
+      z-index: 10;
     }
 
-    header img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-      margin-bottom: 15px;
+      object-fit: cover;
     }
 
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    }
-
-    nav {
-      margin-top: 40px;
+    .logo span {
+      font-size: 1.5em;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     nav a {
-      display: inline-block;
-      margin: 10px 20px;
-      padding: 10px 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
       color: white;
       text-decoration: none;
       font-size: 1.2em;
       font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 8px;
       transition: background-color 0.3s;
     }
 
     nav a:hover {
       background-color: rgba(255, 255, 255, 0.25);
     }
+
+    .center-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .center-text h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .center-text p {
+      font-size: 1.5em;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="img/logo.jpg" alt="Logo Pizzeria" />
-    <h1>Pizzeria Bella Napoli</h1>
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Logo Pizzeria" id="logo">
+      <span id="nomePizzeria">Pizzeria Bella Napoli</span>
+    </div>
+    <nav>
+      <a href="pizze.html" id="menuLink">Menu</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="pizze.html">Pizze</a>
-    <a href="dolci.html">Dolci</a>
-    <a href="bevande.html">Bevande</a>
-  </nav>
+  <div class="center-text">
+  </div>
 </body>
 </html>
