@@ -26,57 +26,79 @@ body {
   z-index: -1;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.85);
+.header-bar {
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.7);
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 100;
+  overflow-x: hidden; 
 }
 
-header img {
+
+.back-arrow .arrow-left {
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid white;
+  border-left: 5px solid white;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
+}
+.back-arrow:hover .arrow-left {
+  border-color: #fff200;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-container img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
-
-header span {
-  margin-left: 15px;
+.logo-container span {
   font-size: 1.5em;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-nav {
-  margin-top: 90px;
-  text-align: center;
-  background: rgba(0,0,0,0.5);
-  padding: 8px 0;
-  border-radius: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+.home-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin: 0 12px;
-  padding: 5px 8px;
-  transition: all 0.3s ease;
-  border-radius: 5px;
+.home-icon .house {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background: white;
+  border-radius: 2px;
 }
-
-nav a:hover {
-  background: rgba(255,255,255,0.2);
+.home-icon .house::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 30px;
+  height: 10px;
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.home-icon:hover .house,
+.home-icon:hover .house::before {
+  background: #fff200;
 }
 
 main {
@@ -88,6 +110,7 @@ main {
   gap: 20px;
   padding-bottom: 50px;
   scroll-padding-top: 120px;
+  z-index: 10;
 }
 
 .item {
@@ -146,31 +169,76 @@ main {
 </head>
 <body>
 <div class="background"></div>
-<header>
-<img src="img/logo.jpg" alt="Logo">
-<span>Pizzeria Bella Napoli</span>
-</header>
 
-<nav>
-<a href="pizze.html">Pizze</a>
-<a href="fritti.html">Fritti</a>
-<a href="dolci.html">Dolci</a>
-<a href="bevande.html">Bevande</a>
-</nav>
+<div class="header-bar">
+  <a href="menu.html" class="back-arrow">
+    <div class="arrow-left"></div>
+  </a>
+
+  <div class="logo-container">
+    <img src="img/logo.jpg" alt="Logo">
+    <span>Pizzeria Bella Napoli</span>
+  </div>
+
+  <a href="index.html" class="home-icon">
+    <div class="house"></div>
+  </a>
+</div>
 
 <main>
   <div class="item">
-    <img src="img/Arancini.png" alt="Arancini">
+    <img src="img/Patatine_Fritte.jpg" alt="Patatine Fritte">
     <div class="item-info">
-      <h3>Arancini <span>€3.50</span></h3>
-      <p>Ripieni di riso e ragù, fritti dorati.</p>
+      <h3>Patatine Fritte <span>€3.00</span></h3>
+      <p><i>Patatine croccanti e dorate.</i></p>
     </div>
   </div>
+
   <div class="item">
-    <img src="img/Olive_Ascolane.png" alt="Olive Ascolane">
+    <img src="img/Crocche_Patate.jpg" alt="Crocchè di Patate">
+    <div class="item-info">
+      <h3>Crocchè di Patate <span>€3.50</span></h3>
+      <p><i>Crocchè morbidi di patate e formaggio, fritti dorati.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Arancini.jpg" alt="Arancini">
+    <div class="item-info">
+      <h3>Arancini <span>€3.50</span></h3>
+      <p><i>Ripieni di riso e ragù, fritti dorati.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Olive_Ascolane.jpg" alt="Olive Ascolane">
     <div class="item-info">
       <h3>Olive Ascolane <span>€4.00</span></h3>
-      <p>Olive ripiene di carne e fritte.</p>
+      <p><i>Olive ripiene di carne e fritte.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Crocche_Carne.jpg" alt="Polpette di Carne">
+    <div class="item-info">
+      <h3>Crocche di Carne <span>€4.50</span></h3>
+      <p><i>Polpette di carne macinata, fritte e succose.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Mozzarella_in_Carozza.jpg" alt="Mozzarella in Carrozza">
+    <div class="item-info">
+      <h3>Mozzarella in Carrozza <span>€4.50</span></h3>
+      <p><i>Pane fritto ripieno di mozzarella filante.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Calzone_Fritto.jpg" alt="Calzone Fritto">
+    <div class="item-info">
+      <h3>Calzone Fritto <span>€5.00</span></h3>
+      <p><i>Ripieno di ricotta, mozzarella e salame, fritto dorato.</i></p>
     </div>
   </div>
 </main>

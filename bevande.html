@@ -26,59 +26,85 @@ body {
   z-index: -1;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.85);
+/* Barra superiore */
+.header-bar {
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.7);
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 100;
+  overflow-x: hidden;
 }
 
-header img {
+/* Freccia CSS a sinistra */
+.back-arrow .arrow-left {
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid white;
+  border-left: 5px solid white;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
+}
+.back-arrow:hover .arrow-left {
+  border-color: #fff200;
+}
+
+/* Logo e nome al centro */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-container img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
-
-header span {
-  margin-left: 15px;
+.logo-container span {
   font-size: 1.5em;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-nav {
-  margin-top: 90px;
-  text-align: center;
-  background: rgba(0,0,0,0.5);
-  padding: 8px 0;
-  border-radius: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+/* Casetta CSS a destra */
+.home-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-icon .house {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background: white;
+  border-radius: 2px;
+}
+.home-icon .house::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 30px;
+  height: 10px;
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.home-icon:hover .house,
+.home-icon:hover .house::before {
+  background: #fff200;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin: 0 12px;
-  padding: 5px 8px;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
-
-nav a:hover {
-  background: rgba(255,255,255,0.2);
-}
-
+/* Main content */
 main {
   width: 90%;
   max-width: 900px;
@@ -88,6 +114,7 @@ main {
   gap: 20px;
   padding-bottom: 50px;
   scroll-padding-top: 120px;
+  z-index: 10;
 }
 
 .item {
@@ -146,35 +173,40 @@ main {
 </head>
 <body>
 <div class="background"></div>
-<header>
-<img src="img/logo.jpg" alt="Logo">
-<span>Pizzeria Bella Napoli</span>
-</header>
 
-<nav>
-<a href="pizze.html">Pizze</a>
-<a href="fritti.html">Fritti</a>
-<a href="dolci.html">Dolci</a>
-<a href="bevande.html">Bevande</a>
-</nav>
+<!-- Barra superiore -->
+<div class="header-bar">
+  <a href="menu.html" class="back-arrow">
+    <div class="arrow-left"></div>
+  </a>
+
+  <div class="logo-container">
+    <img src="img/logo.jpg" alt="Logo">
+    <span>Pizzeria Bella Napoli</span>
+  </div>
+
+  <a href="index.html" class="home-icon">
+    <div class="house"></div>
+  </a>
+</div>
 
 <main>
   <div class="item">
-    <img src="img/Acqua.png" alt="Acqua Naturale">
+    <img src="img/Acqua.jpg" alt="Acqua Naturale">
     <div class="item-info">
       <h3>Acqua Naturale 1L <span>€2.00</span></h3>
     </div>
   </div>
 
   <div class="item">
-    <img src="img/Acqua_Frizzante.png" alt="Acqua Frizzante">
+    <img src="img/Acqua_Frizzante.jpg" alt="Acqua Frizzante">
     <div class="item-info">
       <h3>Acqua Frizzante 1L <span>€2.00</span></h3>
     </div>
   </div>
 
   <div class="item">
-    <img src="img/CocaCola.png" alt="CocaCola">
+    <img src="img/CocaCola.jpg" alt="CocaCola">
     <div class="item-info">
       <h3>CocaCola 33cl <span>€2.50</span></h3>
       <p><i>Bevanda analcolica</i></p>
@@ -182,7 +214,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/CocaCola_Zero.png" alt="CocaCola Zero">
+    <img src="img/CocaCola_Zero.jpg" alt="CocaCola Zero">
     <div class="item-info">
       <h3>CocaCola Zero 33cl <span>€2.50</span></h3>
       <p><i>Bevanda analcolica senza zuccheri</i></p>
@@ -190,7 +222,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/Fanta.png" alt="Fanta">
+    <img src="img/Fanta.jpg" alt="Fanta">
     <div class="item-info">
       <h3>Fanta 33cl <span>€2.50</span></h3>
       <p><i>Bevanda analcolica all’arancia</i></p>
@@ -198,7 +230,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/The_Pesca.png" alt="The alla Pesca">
+    <img src="img/The_Pesca.jpg" alt="The alla Pesca">
     <div class="item-info">
       <h3>The alla Pesca 33cl <span>€2.50</span></h3>
       <p><i>Bevanda analcolica alla Pesca</i></p>
@@ -206,7 +238,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/The_Limone.png" alt="The al Limone">
+    <img src="img/The_Limone.jpg" alt="The al Limone">
     <div class="item-info">
       <h3>The al Limone 33cl <span>€2.50</span></h3>
       <p><i>Bevanda analcolica al Limone</i></p>
@@ -214,7 +246,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/Birra_Nastro_Azzurro.png" alt="Birra Nastro Azzurro">
+    <img src="img/Birra_Nastro_Azzurro.jpg" alt="Birra Nastro Azzurro">
     <div class="item-info">
       <h3>Birra Nastro Azzurro 66cl 5,1% vol. <span>€4.50</span></h3>
       <p><i>Birra premium italiana</i></p>
@@ -222,7 +254,7 @@ main {
   </div>
         
   <div class="item">
-    <img src="img/Birra_Heineken.png" alt="Birra Heineken">
+    <img src="img/Birra_Heineken.jpg" alt="Birra Heineken">
     <div class="item-info">
       <h3>Birra Heineken 66cl 5,0% vol. <span>€4.00</span></h3>
       <p><i>Birra lager</i></p>
@@ -230,7 +262,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/Birra_Peroni.png" alt="Birra Peroni">
+    <img src="img/Birra_Peroni.jpg" alt="Birra Peroni">
     <div class="item-info">
       <h3>Birra Peroni 66cl 4,7% vol. <span>€4.00</span></h3>
       <p><i>Birra italiana</i></p>
@@ -238,7 +270,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/Vino_Ciro_Rosso.png" alt="Vino Cirò Rosso">
+    <img src="img/Vino_Ciro_Rosso.jpg" alt="Vino Cirò Rosso">
     <div class="item-info">
       <h3>Vino Cirò Rosso 75cl 14,0% vol. <span>€12.00</span></h3>
       <p><i>Vino rosso calabrese</i></p>
@@ -246,7 +278,7 @@ main {
   </div>
 
   <div class="item">
-    <img src="img/Vino_Ciro_Bianco.png" alt="Vino Cirò Bianco">
+    <img src="img/Vino_Ciro_Bianco.jpg" alt="Vino Cirò Bianco">
     <div class="item-info">
       <h3>Vino Cirò Bianco 75cl 12,5% vol. <span>€11.00</span></h3>
       <p><i>Vino bianco calabrese</i></p>

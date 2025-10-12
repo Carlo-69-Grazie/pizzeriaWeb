@@ -26,59 +26,85 @@ body {
   z-index: -1;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.85);
+/* Barra superiore */
+.header-bar {
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.7);
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 100;
+  overflow-x: hidden;
 }
 
-header img {
+/* Freccia CSS a sinistra */
+.back-arrow .arrow-left {
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid white;
+  border-left: 5px solid white;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
+}
+.back-arrow:hover .arrow-left {
+  border-color: #fff200;
+}
+
+/* Logo e nome al centro */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-container img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
-
-header span {
-  margin-left: 15px;
+.logo-container span {
   font-size: 1.5em;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-nav {
-  margin-top: 90px;
-  text-align: center;
-  background: rgba(0,0,0,0.5);
-  padding: 8px 0;
-  border-radius: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+/* Casetta CSS a destra */
+.home-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-icon .house {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background: white;
+  border-radius: 2px;
+}
+.home-icon .house::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 30px;
+  height: 10px;
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.home-icon:hover .house,
+.home-icon:hover .house::before {
+  background: #fff200;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin: 0 12px;
-  padding: 5px 8px;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
-
-nav a:hover {
-  background: rgba(255,255,255,0.2);
-}
-
+/* Main content */
 main {
   width: 90%;
   max-width: 900px;
@@ -88,6 +114,7 @@ main {
   gap: 20px;
   padding-bottom: 50px;
   scroll-padding-top: 120px;
+  z-index: 10;
 }
 
 .item {
@@ -146,38 +173,101 @@ main {
 </head>
 <body>
 <div class="background"></div>
-<header>
-<img src="img/logo.jpg" alt="Logo">
-<span>Pizzeria Bella Napoli</span>
-</header>
 
-<nav>
-<a href="pizze.html">Pizze</a>
-<a href="fritti.html">Fritti</a>
-<a href="dolci.html">Dolci</a>
-<a href="bevande.html">Bevande</a>
-</nav>
+<!-- Barra superiore -->
+<div class="header-bar">
+  <a href="menu.html" class="back-arrow">
+    <div class="arrow-left"></div>
+  </a>
+
+  <div class="logo-container">
+    <img src="img/logo.jpg" alt="Logo">
+    <span>Pizzeria Bella Napoli</span>
+  </div>
+
+  <a href="index.html" class="home-icon">
+    <div class="house"></div>
+  </a>
+</div>
 
 <main>
   <div class="item">
-    <img src="img/Margherita.png" alt="Margherita">
+    <img src="img/Marinara.jpg" alt="Pizza Marinara" />
     <div class="item-info">
-      <h3>Margherita <span>€6.00</span></h3>
-      <p>Pomodoro, mozzarella fiordilatte e basilico fresco.</p>
+      <h3>Pizza Marinara <span>€5.50</span></h3>
+      <p><i>Pomodoro, aglio, origano e olio extravergine d’oliva. Semplice e autentica.</i></p>
     </div>
   </div>
+
   <div class="item">
-    <img src="img/Diavola.png" alt="Diavola">
+      <img src="img/Margherita.jpg" alt="Pizza Margherita" />
+      <div class="item-info">
+        <h3>Pizza Margherita <span>€6.00</span></h3>
+        <p><i>Pomodoro, mozzarella fiordilatte e basilico fresco. La regina delle pizze.</i></p>
+      </div>
+    </div>
+
+  <div class="item">
+      <img src="img/Diavola.jpg" alt="Pizza Diavola" />
+      <div class="item-info">
+        <h3>Pizza Diavola <span>€7.00</span></h3>
+        <p><i>Pomodoro, mozzarella e salamino piccante. Per chi ama i sapori forti.</i></p>
+      </div>
+    </div>
+
+  <div class="item">
+    <img src="img/PizzaFritta.jpg" alt="Pizza Fritta" />
     <div class="item-info">
-      <h3>Diavola <span>€7.00</span></h3>
-      <p>Pomodoro, mozzarella e salamino piccante.</p>
+      <h3>Pizza Fritta <span>€7.00</span></h3>
+      <p><i>Ripiena con ricotta, cicoli, provola e pomodoro. Dorata e croccante.</i></p>
     </div>
   </div>
+
   <div class="item">
-    <img src="img/QuattroFormaggi.png" alt="Quattro Formaggi">
+    <img src="img/QuattroFormaggi.jpg" alt="Pizza Quattro Formaggi" />
     <div class="item-info">
-      <h3>Quattro Formaggi <span>€8.00</span></h3>
-      <p>Mozzarella, gorgonzola, fontina e parmigiano.</p>
+      <h3>Pizza Quattro Formaggi <span>€8.00</span></h3>
+      <p><i>Mozzarella, gorgonzola, fontina e parmigiano. Cremosa e irresistibile.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Boscaiola.jpg" alt="Pizza Boscaiola" />
+    <div class="item-info">
+      <h3>Pizza Boscaiola <span>€8.50</span></h3>
+      <p><i>Mozzarella, salsiccia e funghi trifolati. Un classico dal gusto intenso.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Capricciosa.jpg" alt="Pizza Capricciosa " />
+    <div class="item-info">
+      <h3>Pizza Capricciosa<span>€8.50</span></h3>
+      <p><i>Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive nere.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/SalsicciaFriarelli.jpg" alt="Pizza Salsiccia e Friarelli" />
+    <div class="item-info">
+      <h3>Pizza Salsiccia e Friarelli <span>€9.00</span></h3>
+      <p><i>Base bianca con mozzarella, Friarelli e salsiccia rustica.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Bufalina.jpg" alt="Pizza Bufalina" />
+    <div class="item-info">
+      <h3>Pizza Bufalina <span>€9.00</span></h3>
+      <p><i>Pomodoro San Marzano, mozzarella di bufala DOP e basilico fresco.</i></p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="img/Mortazza.jpg" alt="Pizza Mortazza" />
+    <div class="item-info">
+      <h3>Pizza Mortazza <span>€9.50</span></h3>
+      <p><i>Base bianca con crema di pistacchio, mozzarella e mortadella. Irresistibile.</i></p>
     </div>
   </div>
 </main>

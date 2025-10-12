@@ -12,40 +12,40 @@
       color: white;
       height: 100vh;
       overflow: hidden;
-      background-color: #000; /* fallback */
+      background-color: #000;
     }
 
-    /* Sfondo con blur */
     .background {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("img/sfondo.jpg") no-repeat center center fixed;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url("img/sfondo.jpg") no-repeat center center fixed;
       background-size: cover;
-      filter: brightness(0.6) blur(4px);
+      filter: brightness(0.8) blur(6px);
       z-index: -1;
     }
 
     header {
       display: flex;
       align-items: center;
-      padding: 20px 50px;
-      background: rgba(0, 0, 0, 0.7); /* barra più scura */
+      justify-content: center;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      box-sizing: border-box;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.7);
       z-index: 10;
-      color: white; /* scritte bianche */
     }
 
     .logo {
+      position: absolute;
+      left: 20px;
       display: flex;
       align-items: center;
-      gap: 10px;
     }
 
     .logo img {
@@ -53,23 +53,35 @@
       height: 60px;
       border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    .logo span {
-      font-size: 1.5em;
+    .pizzeria-name {
+      font-size: 2em;
       font-weight: bold;
-      letter-spacing: 1px;
       color: white;
+      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .center-button {
       position: absolute;
-      top: 50%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      padding-top: 80px; /* spazio per header */
       box-sizing: border-box;
+    }
+
+    .center-button .motto {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
     .center-button a {
@@ -77,19 +89,72 @@
       color: white;
       text-decoration: none;
       font-size: 2em;
-      font-weight: bold;
-      padding: 20px 50px;
-      background-color: rgba(0, 0, 0, 0.4);
+      font-weight: 900;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.4);
       border: 2px solid white;
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .center-button a::after {
+      content: '';
+      position: absolute;
+      top: -5px; left: -5px; right: -5px; bottom: -5px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ff3c3c, #ffb03c);
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: -1;
+    }
+
+    .center-button a:hover::after {
+      opacity: 0.3;
     }
 
     .center-button a:hover {
-      background-color: rgba(0, 0, 0, 0.6);
-      transform: scale(1.05);
+      background-color: rgba(0,0,0,0.6);
+      transform: scale(1.08);
+      box-shadow: 0 15px 35px rgba(255,60,60,0.5);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1em;
+      text-align: center;
+      z-index: 10;
+    }
+
+    @media (max-width: 800px) {
+      .center-button a {
+        font-size: 1.5em;
+        padding: 15px 40px;
+      }
+      .logo img {
+        width: 50px;
+        height: 50px;
+      }
+      .pizzeria-name {
+        font-size: 1.5em;
+      }
+      .center-button .motto {
+        font-size: 1.2em;
+      }
+      footer {
+        font-size: 0.9em;
+        padding: 5px;
+      }
     }
   </style>
 </head>
@@ -98,13 +163,18 @@
 
   <header>
     <div class="logo">
-      <img src="img/logo.jpg" alt="Logo Pizzeria" id="logo">
-      <span id="nomePizzeria">Pizzeria Bella Napoli</span>
+      <img src="img/logo.jpg" alt="Logo Pizzeria">
     </div>
+    <div class="pizzeria-name">Pizzeria Bella Napoli</div>
   </header>
 
   <div class="center-button">
-    <a href="menu.html" id="menuLink">Menu</a>
+    <div class="motto">Anche le situazioni peggiori migliorano con una pizza</div>
+    <a href="menu.html">Menu</a>
   </div>
+
+  <footer>
+    Viale dei Normanni, 10 | 88100 Catanzaro | info@bellanapoli.it | +39 333 130 8916
+  </footer>
 </body>
 </html>
