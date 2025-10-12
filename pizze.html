@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dolci - Bella Napoli</title>
+  <style>
+    body {
+      background-image: url("img/sfondo.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    header h1 {
+      margin-left: 20px;
+      font-size: 2em;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    main {
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 10px 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .item-info {
+      color: white;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-info h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item-info h3 span {
+      margin-left: auto;
+      padding-left: 10px;
+      font-weight: normal;
+      font-size: 1em;
+    }
+
+    .item-info p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/Napoli-Logo-LabCucina_1.png" alt="Logo Pizzeria" />
+    <h1>Pizzeria Bella Napoli</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Pizze</a>
+    <a href="bevande.html">Bevande</a>
+  </nav>
+
+  <main>
+   <div class="item">
+  <img src="img/Marinara.png" alt="Pizza Marinara" />
+  <div class="item-info">
+    <h3>Pizza Marinara <span>€5.50</span></h3>
+    <p>Pomodoro, aglio, origano e olio extravergine d’oliva. Semplice e autentica.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/Margherita.png" alt="Pizza Margherita" />
+  <div class="item-info">
+    <h3>Pizza Margherita <span>€6.00</span></h3>
+    <p>Pomodoro, mozzarella fiordilatte e basilico fresco. La regina delle pizze.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/Diavola.png" alt="Pizza Diavola" />
+  <div class="item-info">
+    <h3>Pizza Diavola <span>€7.00</span></h3>
+    <p>Pomodoro, mozzarella e salamino piccante. Per chi ama i sapori forti.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/PizzaFritta.png" alt="Pizza Fritta" />
+  <div class="item-info">
+    <h3>Pizza Fritta <span>€7.00</span></h3>
+    <p>Ripiena con ricotta, cicoli, provola e pomodoro. Dorata e croccante.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/QuattroFormaggi.png" alt="Pizza Quattro Formaggi" />
+  <div class="item-info">
+    <h3>Pizza Quattro Formaggi <span>€8.00</span></h3>
+    <p>Mozzarella, gorgonzola, fontina e parmigiano. Cremosa e irresistibile.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/Boscaiola.png" alt="Pizza Boscaiola" />
+  <div class="item-info">
+    <h3>Pizza Boscaiola <span>€8.50</span></h3>
+    <p>Mozzarella, salsiccia e funghi trifolati. Un classico dal gusto intenso.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/Capricciosa.png" alt="Pizza Capricciosa " />
+  <div class="item-info">
+    <h3>Pizza Capricciosa<span>€8.50</span></h3>
+    <p>Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive nere.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/SalsicciaFriarelli.png" alt="Pizza Salsiccia e Friarelli" />
+  <div class="item-info">
+    <h3>Pizza Salsiccia e Friarelli <span>€9.00</span></h3>
+    <p>Base bianca con mozzarella, Friarelli e salsiccia rustica.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/Bufalina.png" alt="Pizza Bufalina" />
+  <div class="item-info">
+    <h3>Pizza Bufalina <span>€9.00</span></h3>
+    <p>Pomodoro San Marzano, mozzarella di bufala DOP e basilico fresco.</p>
+  </div>
+</div>
+
+<div class="item">
+  <img src="img/Mortazza.png" alt="Pizza Mortazza" />
+  <div class="item-info">
+    <h3>Pizza Mortazza <span>€9.50</span></h3>
+    <p>Base bianca con crema di pistacchio, mozzarella e mortadella. Irresistibile.</p>
+  </div>
+</div>
+
+
+
+  </main>
+</body>
+</html>
