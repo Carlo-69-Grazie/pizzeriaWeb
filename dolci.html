@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dolci - Bella Napoli</title>
+  <style>
+    body {
+      background-image: url("img/sfondo.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    header h1 {
+      margin-left: 20px;
+      font-size: 2em;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    main {
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 10px 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .item-info {
+      color: white;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-info h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item-info h3 span {
+      margin-left: auto;
+      padding-left: 10px;
+      font-weight: normal;
+      font-size: 1em;
+    }
+
+    .item-info p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/Napoli-Logo-LabCucina_1.png" alt="Logo Pizzeria" />
+    <h1>Pizzeria Bella Napoli</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Pizze</a>
+    <a href="bevande.html">Bevande</a>
+  </nav>
+
+  <main>
+    <div class="item">
+      <img src="img/tiramisu.png" alt="Tiramisù" />
+      <div class="item-info">
+        <h3>Tiramisù <span>€4.00</span></h3>
+        <p>Mascarpone, caffè e cacao, il classico della casa.</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/baba.png" alt="Babà" />
+      <div class="item-info">
+        <h3>Babà <span>€3.50</span></h3>
+        <p>Con bagna al rum, soffice e profumato.</p>
+      </div>
+    </div>
+        <div class="item">
+      <img src="img/Cheesecake.png" alt="Cheesecake" />
+      <div class="item-info">
+        <h3>Cheesecake ai frutti di bosco <span>€4.00</span></h3>
+        <p>Base di biscotti, Mascarpone, uova, panna dolce e glassa ai frutti di bosco.</p>
+      </div>
+    </div>
+        <div class="item">
+      <img src="img/CheesecakeNutella.png" alt="CheesecakeNutella" />
+      <div class="item-info">
+        <h3>Cheesecake alla Nutella <span>€4.00</span></h3>
+        <p>Base di biscotti, Mascarpone, uova, panna dolce e Nutella.</p>
+      </div>
+    </div>
+            <div class="item">
+      <img src="img/PizzaNutella.png" alt="PizzaNutella" />
+      <div class="item-info">
+        <h3>Pizza alla Nutella <span>€5.00</span></h3>
+        <p>Pizza alla Nutella con panna e granella di nocciola.</p>
+      </div>
+    </div>
+        <div class="item">
+      <img src="img/TortinoCioccolato.png" alt="TortinoCioccolato" />
+      <div class="item-info">
+        <h3>Tortino al cioccolato <span>€6.00</span></h3>
+        <p>Tortino al cioccolato al cuore caldo homemade.</p>
+      </div>
+    </div>
+        <div class="item">
+      <img src="img/Tartufo.png" alt="Tartufo" />
+      <div class="item-info">
+        <h3>Tartufo <span>€5.00</span></h3>
+        <p>Classico, pistacchio e limone</p>
+      </div>
+    </div>
+        <div class="item">
+      <img src="img/Cannolo.png" alt="Cannolo" />
+      <div class="item-info">
+        <h3>Cannolo <span>€4.00</span></h3>
+        <p>Crema di ricotta, gocce di cioccolato, granella di pistacchio, salsa di psitacchio e zucchero a velo.</p>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
