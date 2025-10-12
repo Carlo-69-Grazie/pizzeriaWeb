@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bevande - Bella Napoli</title>
+  <style>
+    body {
+      background-image: url("img/sfondo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    header h1 {
+      margin-left: 20px;
+      font-size: 2em;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    main {
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .bevanda {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 10px 15px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+    }
+
+    .bevanda img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .bevanda-info {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    .bevanda-info h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bevanda-info h3 span {
+      margin-left: auto;
+      padding-left: 10px;
+      font-weight: normal;
+      font-size: 1em;
+      text-align: right;
+      min-width: 50px;
+    }
+
+    .bevanda-info p {
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="img/logo.jpg" alt="Logo Pizzeria">
+    <h1>Pizzeria Bella Napoli</h1>
+  </header>
+
+  <nav>
+    <a href="pizze.html">Pizze</a>
+    <a href="dolci.html">Dolci</a>
+  </nav>
+
+  <main>
+
+    <div class="bevanda">
+      <img src="img/Acqua.png" alt="Acqua Naturale">
+      <div class="bevanda-info">
+        <h3>Acqua Naturale 1L <span>€2.00</span></h3>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/Acqua_Frizzante.png" alt="Acqua Frizzante">
+      <div class="bevanda-info">
+        <h3>Acqua Frizzante 1L <span>€2.00</span></h3>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/CocaCola.png" alt="CocaCola">
+      <div class="bevanda-info">
+        <h3>CocaCola 33cl <span>€2.50</span></h3>
+        <p><i>Bevanda analcolica</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/CocaCola_Zero.png" alt="CocaCola Zero">
+      <div class="bevanda-info">
+        <h3>CocaCola Zero 33cl <span>€2.50</span></h3>
+        <p><i>Bevanda analcolica senza zuccheri</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/Fanta.png" alt="Fanta">
+      <div class="bevanda-info">
+        <h3>Fanta 33cl <span>€2.50</span></h3>
+        <p><i>Bevanda analcolica all’arancia</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/The_Pesca.png" alt="The alla Pesca">
+      <div class="bevanda-info">
+        <h3>The alla Pesca 33cl <span>€2.50</span></h3>
+        <p><i>Bevanda analcolica alla Pesca</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/The_Limone.png" alt="The al Limone">
+      <div class="bevanda-info">
+        <h3>The al Limone 33cl <span>€2.50</span></h3>
+        <p><i>Bevanda analcolica al Limone</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/Birra_Nastro_Azzurro.png" alt="Birra Nastro Azzurro">
+      <div class="bevanda-info">
+        <h3>Birra Nastro Azzurro 66cl 5,1% vol. <span>€4.50</span></h3>
+        <p><i>Birra premium italiana</i></p>
+      </div>
+    </div>
+        
+    <div class="bevanda">
+      <img src="img/Birra_Heineken.png" alt="Birra Heineken">
+      <div class="bevanda-info">
+        <h3>Birra Heineken 66cl 5,0% vol. <span>€4.00</span></h3>
+        <p><i>Birra lager</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/Birra_Peroni.png" alt="Birra Peroni">
+      <div class="bevanda-info">
+        <h3>Birra Peroni 66cl 4,7% vol. <span>€4.00</span></h3>
+        <p><i>Birra italiana</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/Vino_Ciro_Rosso.png" alt="Vino Cirò Rosso">
+      <div class="bevanda-info">
+        <h3>Vino Cirò Rosso 75cl 14,0% vol. <span>€12.00</span></h3>
+        <p><i>Vino rosso calabrese</i></p>
+      </div>
+    </div>
+
+    <div class="bevanda">
+      <img src="img/Vino_Ciro_Bianco.png" alt="Vino Cirò Bianco">
+      <div class="bevanda-info">
+        <h3>Vino Cirò Bianco 75cl 12,5% vol. <span>€11.00</span></h3>
+        <p><i>Vino bianco calabrese</i></p>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
