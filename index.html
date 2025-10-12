@@ -6,36 +6,40 @@
   <title>Pizzeria Bella Napoli</title>
   <style>
     body {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-      background-image: url("img/sfondo.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: black;
->>>>>>> Stashed changes
       margin: 0;
       padding: 0;
       font-family: 'Georgia', serif;
       color: white;
-      background: url("img/sfondo.jpg") no-repeat center fixed;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #000; /* fallback */
+    }
+
+    /* Sfondo con blur */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("img/sfondo.jpg") no-repeat center center fixed;
       background-size: cover;
+      filter: brightness(0.6) blur(4px);
+      z-index: -1;
     }
 
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.7); /* barra più scura */
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       box-sizing: border-box;
       z-index: 10;
+      color: white; /* scritte bianche */
     }
 
     .logo {
@@ -55,55 +59,52 @@
       font-size: 1.5em;
       font-weight: bold;
       letter-spacing: 1px;
-    }
-
-    nav a {
       color: white;
-      text-decoration: none;
-      font-size: 1.2em;
-      font-weight: bold;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
-      border-radius: 8px;
-      transition: background-color 0.3s;
     }
 
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .center-text {
-      text-align: center;
+    .center-button {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      text-align: center;
+      padding-top: 80px; /* spazio per header */
+      box-sizing: border-box;
     }
 
-    .center-text h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    .center-button a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 2px solid white;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
 
-    .center-text p {
-      font-size: 1.5em;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    .center-button a:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+  <div class="background"></div>
+
   <header>
     <div class="logo">
       <img src="img/logo.jpg" alt="Logo Pizzeria" id="logo">
       <span id="nomePizzeria">Pizzeria Bella Napoli</span>
     </div>
-    <nav>
-      <a href="pizze.html" id="menuLink">Menu</a>
-    </nav>
   </header>
 
-  <div class="center-text">
+  <div class="center-button">
+    <a href="menu.html" id="menuLink">Menu</a>
   </div>
 </body>
 </html>
